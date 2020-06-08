@@ -18,7 +18,7 @@ Opens the inventory used to craft minions (can also be opened using the Crafting
 **Only test recipes**
 
 ### Structures
-**Crafting Terminal**
+**Crafting Terminal**  
 ![just-minions-crafting-structure](https://themakowskis.de/content/just-minions-crafting-structure.png)
 
 ## Contributing

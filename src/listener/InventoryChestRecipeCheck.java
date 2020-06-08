@@ -42,17 +42,17 @@ public class InventoryChestRecipeCheck implements Listener{
 
 				@Override
 				public void run() {
-					for (int i = 0; i <RecipeLoader.loadedChestRecipes.size(); i++) {					// for every recipe
+					for (int i = 0; i <RecipeLoader.loadedChestRecipes.size(); i++) {
 						for (int j = 0; j < slot_numbers.size(); j++) {
 
-							if(inv.getItem(slot_numbers.get(j)) != null) {								// for every crafting slot
+							if(inv.getItem(slot_numbers.get(j)) != null) {
 
 								Material m = RecipeLoader.loadedChestRecipes.get(i).getMaterialAt(j);
 								Material m2 = inv.getItem(slot_numbers.get(j)).getType();
 
 								if(m != null && m2 != null) {
-									if(m == m2) {														// compare slot with recipe
-										counter++;														// count how many slots are right
+									if(m == m2) {
+										counter++;
 									}
 								}
 							}
