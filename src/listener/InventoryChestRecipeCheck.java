@@ -58,7 +58,7 @@ public class InventoryChestRecipeCheck implements Listener{
 							}
 						}
 						if(counter == 9) {
-							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 5));	//result
+							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 5));
 							inv.setItem(16, RecipeLoader.loadedChestRecipes.get(i).getResult());
 							System.out.println(RecipeLoader.loadedChestRecipes.get(i).getName() + counter);
 						} else {
@@ -76,7 +76,7 @@ public class InventoryChestRecipeCheck implements Listener{
 	@EventHandler
 	public void inventoryClose(InventoryCloseEvent e) {
 		if(e.getInventory().getTitle().equals(CraftingInventory.INVENTORY_NAME)) {
-			Bukkit.getScheduler().cancelTask(taskid);													// end loop if inventory closed
+			Bukkit.getScheduler().cancelTask(taskid);
 		}
 	}
 
