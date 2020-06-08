@@ -1,0 +1,6 @@
+name: Minions
+version: 0.6
+main: main.Main
+commands:
+   inv: 
+      description: Opens minion crafting interface
