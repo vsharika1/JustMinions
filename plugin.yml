@@ -4,3 +4,5 @@ main: main.Main
 commands:
    inv: 
       description: Opens minion crafting interface
+   spawnas:
+      description: Spawns a minion for testing purposes

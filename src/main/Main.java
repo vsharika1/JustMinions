@@ -1,5 +1,6 @@
 package main;
 
+import commands.SpawnArmorStand;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,6 +23,7 @@ public class Main extends JavaPlugin{
 		new RecipeLoader();
 		
 		getCommand("inv").setExecutor(new OpenInventory());
+		getCommand("spawnas").setExecutor(new SpawnArmorStand());
 		
 		PluginManager pm = Bukkit.getPluginManager();
 		

@@ -14,7 +14,7 @@ public class OpenInventory implements CommandExecutor{
 		
 		if(sender instanceof Player) {
 			Player p = (Player) sender;
-			if(p.hasPermission(" ksg")) {
+			if(p.hasPermission("justminions.spawn.*")) {
 				if(args.length == 0) {
 					new CraftingInventory(p);
 				}
