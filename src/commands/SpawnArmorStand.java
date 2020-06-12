@@ -1,7 +1,9 @@
 package commands;
 
 import armorstandnotnice.Minion;
+import main.Main;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,6 +34,8 @@ public class SpawnArmorStand implements CommandExecutor {
                                 if(as.isSmall()) {
                                     if(as.getHelmet() != null) {
                                         as.remove();
+                                        Block b = as.getWorld().getBlockAt(as.getLocation().add(0, -1,0));
+
                                     }
                                 }
                             }
