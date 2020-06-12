@@ -5,7 +5,9 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
+
+import java.util.ArrayList;
 
 public class SpawnArmorStand implements CommandExecutor {
     @Override
@@ -20,6 +22,21 @@ public class SpawnArmorStand implements CommandExecutor {
                         new Minion(p.getLocation(), Material.REDSTONE_ORE);
 
                     } else if(args[0].equalsIgnoreCase("remove")) {
+
+                        ArrayList<Entity> nearbymobs = new ArrayList<>(p.getNearbyEntities(1,1,1));
+
+                        for (Entity i : nearbymobs) {
+
+                            if(i.getType() == EntityType.ARMOR_STAND) {
+                                ArmorStand as = (ArmorStand) i;
+                                if(as.isSmall()) {
+                                    if(as.getHelmet() != null) {
+                                        as.remove();
+                                    }
+                                }
+                            }
+
+                        }
 
                     }
                 }

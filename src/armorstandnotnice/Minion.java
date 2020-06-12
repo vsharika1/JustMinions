@@ -16,6 +16,8 @@ public class Minion {
         as.setHelmet(new ItemStack(m));
         as.setCustomName(ARMOR_STAND_NAME);
         as.setCustomNameVisible(true);
+        as.setSmall(true);
+        as.setInvulnerable(true);
 
     }
 
