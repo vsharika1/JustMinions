@@ -1,7 +1,9 @@
 package commands;
 
+import armorstandnotnice.ArmorStandOptions;
 import armorstandnotnice.Minion;
 import main.Main;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
@@ -23,25 +25,14 @@ public class SpawnArmorStand implements CommandExecutor {
 
                         new Minion(p.getLocation(), Material.REDSTONE_ORE);
 
+                        ArmorStandOptions.changePositions();
+
                     } else if(args[0].equalsIgnoreCase("remove")) {
 
-                        ArrayList<Entity> nearbymobs = new ArrayList<>(p.getNearbyEntities(1,1,1));
+                        ArmorStandOptions.removeArmorStands(p);
 
-                        for (Entity i : nearbymobs) {
-
-                            if(i.getType() == EntityType.ARMOR_STAND) {
-                                ArmorStand as = (ArmorStand) i;
-                                if(as.isSmall()) {
-                                    if(as.getHelmet() != null) {
-                                        as.remove();
-                                        Block b = as.getWorld().getBlockAt(as.getLocation().add(0, -1,0));
-
-                                    }
-                                }
-                            }
-
-                        }
-
+                    } else if(args[0].equalsIgnoreCase("size")) {
+                        Bukkit.broadcastMessage(Minion.stands.size() + "");
                     }
                 }
             }

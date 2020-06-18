@@ -48,33 +48,35 @@ public class Main extends JavaPlugin{
 	public static void loadAsFromConfig() {
 		if(getPlugin().getConfig() != null) {
 			for (int i = 0; i < getPlugin().getConfig().getInt("Minions.number"); i++) {
-				double x = (double) getPlugin().getConfig().get("Minion.block." + i + ".x");
-				double y = (double) getPlugin().getConfig().get("Minion.block." + i + ".y");
-				double z = (double) getPlugin().getConfig().get("Minion.block." + i + ".z");
+				if(getPlugin().getConfig().get("Minion.block." + i +  ".x") != null) {
+					double x = (double) getPlugin().getConfig().get("Minion.block." + i + ".x");
+					double y = (double) getPlugin().getConfig().get("Minion.block." + i + ".y");
+					double z = (double) getPlugin().getConfig().get("Minion.block." + i + ".z");
 
-				World w = Bukkit.getWorld((String) getPlugin().getConfig().get("Minion.block." + i + ".world"));
+					World w = Bukkit.getWorld((String) getPlugin().getConfig().get("Minion.block." + i + ".world"));
 
-				Location locs = new Location(w,x, y, z);
+					Location locs = new Location(w,x, y, z);
 
-				Cow aw = (Cow) w.spawnEntity(locs, EntityType.COW);
+					Cow aw = (Cow) w.spawnEntity(locs, EntityType.COW);
 
-				ArrayList<Entity> entitiess = new ArrayList<>(aw.getNearbyEntities(0, 1, 0));
-				aw.remove();
+					ArrayList<Entity> entitiess = new ArrayList<>(aw.getNearbyEntities(0, 1, 0));
+					aw.remove();
 
-				for (Entity e: entitiess) {
+					for (Entity e: entitiess) {
 
-					if(e instanceof ArmorStand) {
-						ArmorStand as = (ArmorStand) e;
-						if(as.isSmall()) {
-							if(as.getHelmet() != null) {
-								Minion.stands.add(as);
-								print("" + Minion.stands.size());
+						if(e instanceof ArmorStand) {
+							ArmorStand as = (ArmorStand) e;
+							if(as.isSmall()) {
+								if(as.getHelmet() != null) {
+									Minion.stands.add(as);
+									print("" + Minion.stands.size());
+									print("" + Minion.stands.indexOf(as));
+									print("Jz kommt x" + getPlugin().getConfig().get("Minion.block." + i + ".x"));
+								}
 							}
 						}
 					}
-
-				}
-
+				} else print("null lul");
 			}
 		}
 	}

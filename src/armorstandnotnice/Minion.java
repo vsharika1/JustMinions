@@ -19,10 +19,12 @@ public class Minion {
 
         ArmorStand as = (ArmorStand) loc.getWorld().spawnEntity(loc, EntityType.ARMOR_STAND);
         as.setHelmet(new ItemStack(m));
+        as.setGravity(false);
         as.setCustomName(ARMOR_STAND_NAME);
         as.setCustomNameVisible(true);
         as.setSmall(true);
         as.setInvulnerable(true);
+        as.teleport(as.getWorld().getBlockAt(as.getLocation().add(0, -1,0)).getLocation().add(0.5, 1, 0.5));
         stands.add(as);
 
         int number;
@@ -36,16 +38,9 @@ public class Minion {
         }
         number += 1;
 
-        Block b = as.getWorld().getBlockAt(as.getLocation().add(0, -1,0));
-        Location bloc = b.getLocation();
-        Main.getPlugin().getConfig().set("Minion.block."+ number +".world", bloc.getWorld().getName());
-        Main.getPlugin().getConfig().set("Minion.block."+ number +".x", bloc.getX());
-        Main.getPlugin().getConfig().set("Minion.block."+ number +".y", bloc.getY());
-        Main.getPlugin().getConfig().set("Minion.block."+ number +".z", bloc.getZ());
+        ArmorStandOptions.changePositions();
 
-        Main.getPlugin().getConfig().set("Minions.number", stands.size());
-
-        Main.getPlugin().saveConfig();
+        new TimeStarter(as);
 
     }
 

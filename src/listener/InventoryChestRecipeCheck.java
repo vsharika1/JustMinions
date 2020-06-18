@@ -60,7 +60,7 @@ public class InventoryChestRecipeCheck implements Listener{
 						if(counter == 9) {
 							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 5));
 							inv.setItem(16, RecipeLoader.loadedChestRecipes.get(i).getResult());
-							System.out.println(RecipeLoader.loadedChestRecipes.get(i).getName() + counter);
+							System.out.println(RecipeLoader.loadedChestRecipes.get(i).getName() + " " + counter);
 						} else {
 							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14));
 							inv.setItem(16, null);

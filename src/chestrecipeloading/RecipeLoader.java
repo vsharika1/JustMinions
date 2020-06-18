@@ -15,11 +15,11 @@ public class RecipeLoader {
 	public RecipeLoader() {
 		
 		ItemStack iron_is = new ItemStack(Material.IRON_BLOCK);
-		ItemMeta iiron_is = iron_is.getItemMeta();
-		iiron_is.setDisplayName("§aSpecialBlock");
-		iron_is.setItemMeta(iiron_is);
+		//ItemMeta iiron_is = iron_is.getItemMeta();
+		//iiron_is.setDisplayName("§aSpecialBlock");
+		//iron_is.setItemMeta(iiron_is);
 		
-		ChestRecipe cr1 = new ChestRecipe(ChestCraftingPatterns.patternring(Material.IRON_INGOT, Material.STONE_PICKAXE), iron_is, "Iron Block");
+		ChestRecipe cr1 = new ChestRecipe(ChestCraftingPatterns.patternring(Material.DIAMOND_BLOCK, Material.DIAMOND), new ItemStack(Material.IRON_BLOCK), "Iron Block");
 		
 		ChestRecipe cr2 = new ChestRecipe(ChestCraftingPatterns.patternring(Material.DIAMOND_BLOCK, Material.ANVIL), new ItemStack(Material.APPLE), "Apple");
 		
