@@ -17,14 +17,15 @@ public class Minion {
 
     public Minion(Location loc, Material m) {
 
-        ArmorStand as = (ArmorStand) loc.getWorld().spawnEntity(loc, EntityType.ARMOR_STAND);
+        Location rloc = loc.getWorld().getBlockAt(loc).getLocation().add(0.5,1,0.5);
+        ArmorStand as = (ArmorStand) loc.getWorld().spawnEntity(rloc, EntityType.ARMOR_STAND);
         as.setHelmet(new ItemStack(m));
         as.setGravity(false);
         as.setCustomName(ARMOR_STAND_NAME);
         as.setCustomNameVisible(true);
         as.setSmall(true);
         as.setInvulnerable(true);
-        as.teleport(as.getWorld().getBlockAt(as.getLocation().add(0, -1,0)).getLocation().add(0.5, 1, 0.5));
+        //as.teleport(as.getWorld().getBlockAt(as.getLocation().add(0, -1,0)).getLocation().add(0.5, 1, 0.5));
         stands.add(as);
 
         int number;

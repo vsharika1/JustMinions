@@ -23,7 +23,7 @@ public class SpawnArmorStand implements CommandExecutor {
                 if(args.length == 1) {
                     if(args[0].equalsIgnoreCase("place")) {
 
-                        new Minion(p.getLocation(), Material.REDSTONE_ORE);
+                        new Minion(p.getLocation().add(0, -1,0), Material.DIAMOND_BLOCK);
 
                         ArmorStandOptions.changePositions();
 

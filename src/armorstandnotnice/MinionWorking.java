@@ -43,12 +43,22 @@ public class MinionWorking {
         int countair = 0;
 
         for (Location l: locs) {
-            if(l.getWorld().getBlockAt(l).getType() == Material.AIR || l.getWorld().getBlockAt(l).getType() == null) {
-                countair ++;
-            } else if(l.getWorld().getBlockAt(l).getType() == m) {
-                count ++;
+            if(m == Material.REDSTONE_ORE) {
+                if(l.getWorld().getBlockAt(l).getType() == Material.AIR || l.getWorld().getBlockAt(l).getType() == null) {
+                    countair ++;
+                } else if(l.getWorld().getBlockAt(l).getType() == m || l.getWorld().getBlockAt(l).getType() == Material.GLOWING_REDSTONE_ORE) {
+                    count ++;
+                } else {
+
+                }
             } else {
-                Bukkit.broadcastMessage("funzt nich");
+                if(l.getWorld().getBlockAt(l).getType() == Material.AIR || l.getWorld().getBlockAt(l).getType() == null) {
+                    countair ++;
+                } else if(l.getWorld().getBlockAt(l).getType() == m) {
+                    count ++;
+                } else {
+
+                }
             }
         }
 

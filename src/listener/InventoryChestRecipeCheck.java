@@ -20,6 +20,7 @@ public class InventoryChestRecipeCheck implements Listener{
 	private int taskid,
 				counter = 0;
 	public static ArrayList<Integer> slot_numbers = new ArrayList<>();
+	private boolean b = true;
 	
 	@EventHandler
 	public void inventoryOpen(InventoryOpenEvent e) {
@@ -42,7 +43,8 @@ public class InventoryChestRecipeCheck implements Listener{
 
 				@Override
 				public void run() {
-					for (int i = 0; i <RecipeLoader.loadedChestRecipes.size(); i++) {
+					b = true;
+					for (int i = 0; i <RecipeLoader.loadedChestRecipes.size() && b; i++) {
 						for (int j = 0; j < slot_numbers.size(); j++) {
 
 							if(inv.getItem(slot_numbers.get(j)) != null) {
@@ -58,12 +60,15 @@ public class InventoryChestRecipeCheck implements Listener{
 							}
 						}
 						if(counter == 9) {
+
 							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 5));
 							inv.setItem(16, RecipeLoader.loadedChestRecipes.get(i).getResult());
-							System.out.println(RecipeLoader.loadedChestRecipes.get(i).getName() + " " + counter);
+							System.out.println(RecipeLoader.loadedChestRecipes.get(i).getName() + " " + counter + " " + RecipeLoader.loadedChestRecipes.get(i).getResult().toString());
+							b = false;
 						} else {
 							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14));
 							inv.setItem(16, null);
+							b = true;
 						}
 						counter = 0;
 

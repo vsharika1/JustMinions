@@ -1,6 +1,7 @@
 package main;
 
 import armorstandnotnice.Minion;
+import armorstandnotnice.TimeStarter;
 import commands.SpawnArmorStand;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -68,6 +69,7 @@ public class Main extends JavaPlugin{
 							ArmorStand as = (ArmorStand) e;
 							if(as.isSmall()) {
 								if(as.getHelmet() != null) {
+									System.out.println("trolololol");
 									Minion.stands.add(as);
 									print("" + Minion.stands.size());
 									print("" + Minion.stands.indexOf(as));
@@ -77,6 +79,11 @@ public class Main extends JavaPlugin{
 						}
 					}
 				} else print("null lul");
+			}
+			for (ArmorStand as: Minion.stands) {
+
+				new TimeStarter(as);
+
 			}
 		}
 	}
