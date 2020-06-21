@@ -24,7 +24,7 @@ All the recipes are crafted in the crafting terminal.
 
 **Minion Recipes**
 
-Recipes for all the things a minion needs including the "MinionPlacer" and the "Minion"
+Recipes for all the things a minion needs including the "MinionPlacer" and the "Minion" 
 
 **Compressed Blocks**
 
