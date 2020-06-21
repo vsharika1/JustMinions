@@ -1,6 +1,8 @@
 package chestrecipeloading;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 import listener.SetMinion;
 import org.bukkit.Material;
@@ -56,7 +58,7 @@ public class RecipeLoader {
 		icemerald.setDisplayName(SetMinion.cemeraldname);
 		cemerald.setItemMeta(icemerald);
 
-		ItemStack cwood = new ItemStack(Material.WOOD);
+		ItemStack cwood = new ItemStack(Material.LOG);
 		ItemMeta icwood = cwood.getItemMeta();
 		icwood.setDisplayName(SetMinion.cwoodname);
 		cwood.setItemMeta(icwood);
@@ -71,9 +73,14 @@ public class RecipeLoader {
 		icslime.setDisplayName(SetMinion.cslimename);
 		cslime.setItemMeta(icslime);
 
-		ChestRecipe cr1 = new ChestRecipe(ChestCraftingPatterns.patternring(Material.STICK, Material.ARMOR_STAND), stick, "Stick");
+		ArrayList<Material> mstick = new ArrayList<Material>(Arrays.asList(Material.DIAMOND_BLOCK, Material.DIAMOND_BLOCK, Material.DIAMOND_BLOCK,
+				Material.EMERALD_BLOCK, Material.STICK, Material.EMERALD_BLOCK, Material.DIAMOND_BLOCK,Material.DIAMOND_BLOCK,Material.DIAMOND_BLOCK));
+		ArrayList<Material> mminion = new ArrayList<>(Arrays.asList(Material.IRON_PICKAXE, Material.GOLD_PICKAXE, Material.DIAMOND_PICKAXE,
+				Material.GHAST_TEAR, Material.ARMOR_STAND, Material.GHAST_TEAR, Material.IRON_AXE, Material.GOLD_AXE, Material.DIAMOND_AXE));
 
-		ChestRecipe cr2 = new ChestRecipe(ChestCraftingPatterns.patternring(Material.GHAST_TEAR, Material.ARMOR_STAND), minionitem, "MinionItem");
+		ChestRecipe cr1 = new ChestRecipe(mstick, stick, "Stick");
+
+		ChestRecipe cr2 = new ChestRecipe(mminion, minionitem, "MinionItem");
 
 		ChestRecipe cr3 = new ChestRecipe(ChestCraftingPatterns.patternfull(Material.REDSTONE_BLOCK), credstone, "Compressed Redstone");
 
@@ -87,7 +94,7 @@ public class RecipeLoader {
 
 		ChestRecipe cr8 = new ChestRecipe(ChestCraftingPatterns.patternfull(Material.EMERALD_BLOCK), cemerald, "Compressed Emerald");
 
-		ChestRecipe cr9 = new ChestRecipe(ChestCraftingPatterns.patternfull(Material.WOOD), cwood, "Compressed Wood");
+		ChestRecipe cr9 = new ChestRecipe(ChestCraftingPatterns.patternfull(Material.LOG), cwood, "Compressed Wood");
 
 		ChestRecipe cr10 = new ChestRecipe(ChestCraftingPatterns.patternfull(Material.STONE), cstone, "Compressed Stone");
 

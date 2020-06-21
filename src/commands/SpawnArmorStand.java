@@ -33,9 +33,9 @@ public class SpawnArmorStand implements CommandExecutor {
 
                     } else if(args[0].equalsIgnoreCase("number")) {
                         Bukkit.broadcastMessage(Minion.stands.size() + "");
-                    } p.sendMessage("§cUse </minion place/remove/number>");
-                } p.sendMessage("§cUse </minion place/remove/number>");
-            } p.sendMessage("§cYou don't have the permission to do that!");
+                    } else p.sendMessage("§cUse </minion place/remove/number>");
+                } else p.sendMessage("§cUse </minion place/remove/number>");
+            } else p.sendMessage("§cYou don't have the permission to do that!");
         }
 
         return false;
