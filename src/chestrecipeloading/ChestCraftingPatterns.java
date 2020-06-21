@@ -23,5 +23,15 @@ public class ChestCraftingPatterns {
 		
 		return arr;
 	}
+	public static ArrayList<Material> patternfull(Material m) {
+
+		ArrayList<Material> arr = new ArrayList<>();
+
+		for(int i = 0; i < 9; i++) {
+			arr.add(m);
+		}
+
+		return arr;
+	}
 
 }

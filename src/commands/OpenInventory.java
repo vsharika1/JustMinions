@@ -17,8 +17,8 @@ public class OpenInventory implements CommandExecutor{
 			if(p.hasPermission("justminions.spawn.*")) {
 				if(args.length == 0) {
 					new CraftingInventory(p);
-				}
-			}
+				} p.sendMessage("§cUse </inv>");
+			} p.sendMessage("§cYou don't have the permission to do that!");
 		}
 		
 		return false;

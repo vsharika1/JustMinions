@@ -7,6 +7,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.EulerAngle;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,12 @@ public class Minion {
         Location rloc = loc.getWorld().getBlockAt(loc).getLocation().add(0.5,1,0.5);
         ArmorStand as = (ArmorStand) loc.getWorld().spawnEntity(rloc, EntityType.ARMOR_STAND);
         as.setHelmet(new ItemStack(m));
+        as.setArms(true);
+        as.setLeftArmPose(new EulerAngle(10,0,-5));
+        as.setRightArmPose(new EulerAngle(10,0,5));
+        ItemStack is1 = new ItemStack(Material.LEATHER_CHESTPLATE, 1, (byte) 4);
+        as.setChestplate(is1);
+        as.setBasePlate(false);
         as.setGravity(false);
         as.setCustomName(ARMOR_STAND_NAME);
         as.setCustomNameVisible(true);

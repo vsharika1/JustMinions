@@ -3,6 +3,7 @@ package main;
 import armorstandnotnice.Minion;
 import armorstandnotnice.TimeStarter;
 import commands.SpawnArmorStand;
+import listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -13,9 +14,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import chestrecipeloading.RecipeLoader;
 import commands.OpenInventory;
-import listener.InventoryChestRecipeCheck;
-import listener.InventoryClickCheck;
-import listener.OpenCraftingInventory;
 
 import java.util.ArrayList;
 
@@ -32,13 +30,16 @@ public class Main extends JavaPlugin{
 		new RecipeLoader();
 		
 		getCommand("inv").setExecutor(new OpenInventory());
-		getCommand("spawnas").setExecutor(new SpawnArmorStand());
+		getCommand("minion").setExecutor(new SpawnArmorStand());
 		
 		PluginManager pm = Bukkit.getPluginManager();
 		
 		pm.registerEvents(new InventoryChestRecipeCheck(), this);
 		pm.registerEvents(new InventoryClickCheck(), this);
 		pm.registerEvents(new OpenCraftingInventory(), this);
+		pm.registerEvents(new SetMinion(), this);
+		pm.registerEvents(new AsClickCheck(), this);
+		pm.registerEvents(new ArmorStandArmorChange(), this);
 
 		loadAsFromConfig();
 		
@@ -69,16 +70,13 @@ public class Main extends JavaPlugin{
 							ArmorStand as = (ArmorStand) e;
 							if(as.isSmall()) {
 								if(as.getHelmet() != null) {
-									System.out.println("trolololol");
 									Minion.stands.add(as);
-									print("" + Minion.stands.size());
-									print("" + Minion.stands.indexOf(as));
-									print("Jz kommt x" + getPlugin().getConfig().get("Minion.block." + i + ".x"));
+									print("Number of minions: " + Minion.stands.size());
 								}
 							}
 						}
 					}
-				} else print("null lul");
+				}
 			}
 			for (ArmorStand as: Minion.stands) {
 

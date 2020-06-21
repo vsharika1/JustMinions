@@ -63,7 +63,6 @@ public class InventoryChestRecipeCheck implements Listener{
 
 							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 5));
 							inv.setItem(16, RecipeLoader.loadedChestRecipes.get(i).getResult());
-							System.out.println(RecipeLoader.loadedChestRecipes.get(i).getName() + " " + counter + " " + RecipeLoader.loadedChestRecipes.get(i).getResult().toString());
 							b = false;
 						} else {
 							inv.setItem(14, new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14));
@@ -74,7 +73,7 @@ public class InventoryChestRecipeCheck implements Listener{
 
 					}
 				}
-			}, 0, 20);
+			}, 0, 2);
 		}
 		
 	}

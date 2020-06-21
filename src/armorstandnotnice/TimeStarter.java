@@ -8,9 +8,33 @@ import org.bukkit.entity.ArmorStand;
 
 public class TimeStarter {
 
-    private int taskid;
+    private int taskid,
+                time;
 
     public TimeStarter(ArmorStand as) {
+
+        Material m = as.getHelmet().getType();
+
+        if(m == Material.REDSTONE_ORE) {
+            time = 60;
+        } else if(m == Material.DIAMOND_ORE) {
+            time = 150;
+        } else if(m == Material.IRON_ORE) {
+            time = 120;
+        } else if(m == Material.GOLD_ORE) {
+            time = 120;
+        } else if(m == Material.LAPIS_ORE) {
+            time = 60;
+        } else if(m == Material.EMERALD_ORE) {
+            time = 150;
+        } else if(m == Material.COBBLESTONE || m == Material.STONE) {
+            time = 10;
+        } else if(m == Material.WOOD) {
+            time = 20;
+        } else {
+            time = 600;
+        }
+
         taskid = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
             @Override
             public void run() {
@@ -19,6 +43,6 @@ public class TimeStarter {
                     Bukkit.getScheduler().cancelTask(taskid);
                 }
             }
-        },0, 20 * 5);
+        },20 * time, 20 * time);
     }
 }

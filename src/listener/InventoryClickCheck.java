@@ -26,7 +26,6 @@ public class InventoryClickCheck implements Listener{
 					}
 					if(e.getSlot() == 16) {
 						if(inv.getItem(16) != null) {
-							System.out.println("hi");
 							for(int i = 0; i < InventoryChestRecipeCheck.slot_numbers.size(); i++) {
 								ItemStack is = inv.getItem(InventoryChestRecipeCheck.slot_numbers.get(i));
 								is.setAmount(is.getAmount() - 1);

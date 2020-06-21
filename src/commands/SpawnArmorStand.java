@@ -31,11 +31,11 @@ public class SpawnArmorStand implements CommandExecutor {
 
                         ArmorStandOptions.removeArmorStands(p);
 
-                    } else if(args[0].equalsIgnoreCase("size")) {
+                    } else if(args[0].equalsIgnoreCase("number")) {
                         Bukkit.broadcastMessage(Minion.stands.size() + "");
-                    }
-                }
-            }
+                    } p.sendMessage("§cUse </minion place/remove/number>");
+                } p.sendMessage("§cUse </minion place/remove/number>");
+            } p.sendMessage("§cYou don't have the permission to do that!");
         }
 
         return false;

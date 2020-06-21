@@ -50,23 +50,31 @@ public class ArmorStandOptions {
                 ArmorStand as = (ArmorStand) i;
                 if(as.isSmall()) {
                     if(as.getHelmet() != null) {
-                        as.remove();
-                        Minion.stands.remove(as);
-                        Bukkit.broadcastMessage("" + Minion.stands.size());
-                        Block b = as.getWorld().getBlockAt(as.getLocation().add(0, -1,0));
-                        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".world", null);
-                        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".x", null);
-                        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".y", null);
-                        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".z", null);
-                        Main.getPlugin().saveConfig();
-
-                        ArmorStandOptions.changePositions();
+                        AsRemoving(as);
 
                     }
                 }
             }
 
         }
+
+    }
+    public static void removeArmorStands(ArmorStand as) {
+        AsRemoving(as);
+    }
+
+    private static void AsRemoving(ArmorStand as) {
+        as.remove();
+        Block b = as.getWorld().getBlockAt(as.getLocation().add(0, -1,0));
+        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".world", null);
+        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".x", null);
+        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".y", null);
+        Main.getPlugin().getConfig().set("Minion.block."+ Minion.stands.indexOf(as) +".z", null);
+        Main.getPlugin().saveConfig();
+
+        Minion.stands.remove(as);
+        Bukkit.broadcastMessage("" + Minion.stands.size());
+        ArmorStandOptions.changePositions();
 
     }
 }

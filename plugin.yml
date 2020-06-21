@@ -1,8 +1,8 @@
 name: Minions
-version: 0.7
+version: 1.0
 main: main.Main
 commands:
    inv: 
       description: Opens the chest crafting interface
-   spawnas:
+   minion:
       description: Spawns a minion for testing purposes
