@@ -31,7 +31,7 @@ Recipes for all the things a minion needs including the "MinionPlacer" and the "
 Compressed blocks aren't available for every block just for the ores, wood, stone and slime. They are always
 crafted with the block form of the item. Their usage is to define the type of a minion.
 
-##Minions
+###Minions   
 **Requirements**
 
 To place a minion, a "Minionplacer", a "Minion" and a compressed block are needed.
