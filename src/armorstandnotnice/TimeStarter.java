@@ -31,6 +31,8 @@ public class TimeStarter {
             time = 10;
         } else if(m == Material.LOG) {
             time = 20;
+        } else if(m == Material.SLIME_BLOCK) {
+            time = 120;
         } else {
             time = 600;
         }

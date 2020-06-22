@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -81,6 +82,10 @@ public class InventoryChestRecipeCheck implements Listener{
 	public void inventoryClose(InventoryCloseEvent e) {
 		if(e.getInventory().getTitle().equals(CraftingInventory.INVENTORY_NAME)) {
 			Bukkit.getScheduler().cancelTask(taskid);
+			Inventory inv = e.getInventory();
+			Player p = (Player) e.getPlayer();
+			p.getInventory().addItem(inv.getItem(0), inv.getItem(1), inv.getItem(2), inv.getItem(9), inv.getItem(10), inv.getItem(11),
+					inv.getItem(18), inv.getItem(19), inv.getItem(20));
 		}
 	}
 

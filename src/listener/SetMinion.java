@@ -30,7 +30,7 @@ public class SetMinion implements Listener {
                          cslimename = "§aCompressed Slime";
     private boolean b;
     private ArrayList<String> names = new ArrayList<String>(Arrays.asList(mstickname, minionitemname,credstonename, cdiamondname, cemeraldname,cironname,
-            cgoldname,clapisname,cwoodname,cstonename));
+            cgoldname,clapisname,cwoodname,cstonename,cslimename));
     private ArrayList<ItemStack> stacks;
 
     @EventHandler
