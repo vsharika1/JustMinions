@@ -39,8 +39,8 @@ To place a minion, a "MinionPlacer", a "Minion" and a compressed block are neede
 
 **Placing**
 
-To place a minion just have a "Minion" in your inventory, a compressed block in you off hand
-and the "MinionsPlacer" in the main hand. The "MinionPlacer" has infinite uses while the "Minions" and
+To place a minion just have a "Minion" in your inventory, a compressed block in your off hand
+and the "MinionPlacer" in the main hand. The "MinionPlacer" has infinite uses while the "Minions" and
 the compressed block will be consumed (just one if a stack is used).
 
 **Working**
@@ -49,7 +49,7 @@ The minion will start working right after being placed, if a 5*5 area below it i
 as its head. The block the minion stands on can be of any type. At first, the minion will start placing
 blocks in the area below it. When the area is full of blocks with the right type, it will destroy a random
 block within the area. Then, the minion will fill up the space again. Different minions need different amounts
-of time for an action. The items will just drop so you can use build hoppers or something similar to collect the items.
+of time for an action. The items will just drop so you can use hoppers or something similar to collect the items.
 
 **Removing**
 
