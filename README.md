@@ -1,7 +1,6 @@
 # JustMinions
 
-JustMinions is a project of Kiwi111 (with Jogius being a mental support and learning Java by doing). It is a Minecraft Plugin
-whose goal it is to introduce functionality similar to the SkyBlock Minions on the Hypixel Minecraft Server.
+JustMinions is a project of Kiwi111 (with Jogius being a mental support and learning Java while coding). It is a Minecraft Plugin which aims to introduce functionality like SkyBlock Minions on the Hypixel Minecraft Server.
 
 ## Installation
 
@@ -16,9 +15,10 @@ Opens the inventory used to craft minions (can also be opened using the Crafting
 
 **/minion**
 
-Works with three different arguments: place, remove and number. "place" places a minion with a
-diamond block as its helmet. "remove" removes all the minions in a one block range 
-of the player. "number" prints the number of all the minions on the server.
+Works with three different arguments: place, remove and number. 
+* "place" places a minion with a diamond block as its helmet.
+* "remove" removes all the minions in a one block range of the player. 
+* "number" prints the number of all the minions on the server.
 
 ### Recipes
 All the recipes can be crafted in the crafting terminal.  
@@ -29,18 +29,18 @@ Recipes for all the things a minion needs including the "MinionPlacer" and the "
 
 **Compressed Blocks**
 
-Compressed blocks aren't available for every block just for the ores, wood, stone and slime. They are always
+Compressed blocks aren't available for every block just for the ores, wood, stone, and slime. They are always
 crafted with the block form of the item. They are used to define the type of a minion.
 
 ### Minions   
 **Requirements**
 
-To place a minion, a "MinionPlacer", a "Minion" and a compressed block are needed.
+To place a minion, a "MinionPlacer", a "Minion" and a compressed block are required.
 
 **Placing**
 
 To place a minion just have a "Minion" in your inventory, a compressed block in your off hand
-and the "MinionPlacer" in the main hand. The "MinionPlacer" has infinite uses while the "Minions" and
+and the "MinionPlacer" in your main hand. The "MinionPlacer" has infinite uses while the "Minions" and
 the compressed block will be consumed (just one if a stack is used).
 
 **Working**
